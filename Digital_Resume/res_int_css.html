@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vidhi Pateliya - Resume</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #4b5563;
+            --accent-color: #3b82f6;
+            --light-accent: #e0e7ff;
+            --white: #ffffff;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.4;
+            color: #333;
+            background-color: #f5f5f5;
+            font-size: 0.9rem;
+        }
+        
+        .resume-container {
+            max-width: 1000px;
+            margin: 20px auto;
+            background-color: var(--white);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: var(--white);
+            padding: 20px;
+        }
+        
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid var(--white);
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .name {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0;
+        }
+        
+        .title {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: var(--light-accent);
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.85rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-icon {
+            margin-right: 5px;
+        }
+        
+        .section {
+            padding: 15px 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            padding-bottom: 3px;
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+        }
+        
+        .education-item, .project-item, .course-item {
+            margin-bottom: 10px;
+        }
+        
+        .item-title {
+            font-weight: 600;
+            color: var(--accent-color);
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+        
+        .date {
+            color: var(--secondary-color);
+            font-size: 0.8rem;
+            font-style: italic;
+            margin-bottom: 2px;
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .skill-tag {
+            background-color: var(--light-accent);
+            color: var(--primary-color);
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .two-column {
+            column-count: 2;
+            column-gap: 20px;
+        }
+        
+        .download-btn {
+            display: block;
+            margin: 20px auto;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            max-width: 200px;
+        }
+        
+        .download-btn:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+        
+        .achievement-item {
+            margin-bottom: 4px;
+            font-size: 0.85rem;
+        }
+        
+        .p-small {
+            margin-bottom: 5px;
+        }
+        
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            .download-btn {
+                display: none;
+            }
+            .resume-container {
+                margin: 0;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <header class="header">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-md-3 text-center text-md-start">
+                        <img src="my_photo.jpeg" alt="Vidhi Pateliya" class="profile-img">
+                    </div>
+                    <div class="col-md-9">
+                        <h1 class="name">VIDHI NATHABHAI PATELIYA</h1>
+                        <p class="title">B.Tech. - CSE - Artificial Intelligence - PIET</p>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <span class="contact-icon">📍</span>
+                                <span>Vadodara, Gujarat, India - 391760</span>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-icon">📞</span>
+                                <span>+91-7567924923</span>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-icon">✉️</span>
+                                <span>2203031241412@paruluniversity.ac.in</span>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-icon">🔗</span>
+                                <a href="https://www.linkedin.com/in/vidhi-pateliya" target="_blank" style="color: inherit; text-decoration: none;">linkedin.com/in/vidhi-pateliya</a>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <div class="row m-0">
+            <div class="col-md-8 p-0">
+                <section class="section">
+                    <h2 class="section-title">PROFESSIONAL SUMMARY</h2>
+                    <p class="p-small">
+                        3rd-year Computer Science Engineering student specializing in Artificial Intelligence with a strong foundation in Python, Java, and C++. Proficient in web development (HTML, CSS, Flask), data analysis (Pandas, Matplotlib), and AI/ML concepts. Experienced in building dynamic web applications, solving DSA problems, and participating in hackathons. Passionate about leveraging AI and data science to develop innovative solutions in healthcare, technology, and data-driven decision-making.
+                    </p>
+                </section>
+                
+                <section class="section">
+                    <h2 class="section-title">PROJECTS</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="project-item">
+                                <div class="item-title">Dynamic Emotion-Based Content Recommendation System</div>
+                                <div class="date">📅 Dec 2024 - Jan 2025 | Team Size: 4</div>
+                                <p class="p-small">Developed an AI-powered system to analyze user emotions via facial expressions and personalize social media feeds in real-time.</p>
+                                <div class="small">
+                                    <span class="text-secondary">Technologies: Computer Vision, AI, ML, DBMS, Python, API</span>
+                                </div>
+                            </div>
+                            
+                            <div class="project-item">
+                                <div class="item-title">Chequered Conquest: A Master Chess</div>
+                                <div class="date">📅 Solo Project</div>
+                                <p class="p-small">Built an interactive chess application with drag-and-drop functionality and real-time rule validation.</p>
+                                <div class="small">
+                                    <span class="text-secondary">Technologies: HTML, CSS, JavaScript</span>
+                                </div>
+                            </div>
+                            
+                            <div class="project-item">
+                                <div class="item-title">YouTube Video Summarizer</div>
+                                <div class="date">📅 Solo Project</div>
+                                <p class="p-small">Created an AI-based tool to generate concise summaries of YouTube videos using NLP.</p>
+                                <div class="small">
+                                    <span class="text-secondary">Technologies: Python, AI, GenAI, NLP</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="project-item">
+                                <div class="item-title">Route Differentiation using GNSS</div>
+                                <div class="date">📅 Aug 2024 - Sep 2024 | Team Size: 6</div>
+                                <p class="p-small">Designed an AI/ML algorithm to differentiate between highways and service roads for optimized traffic management.</p>
+                                <div class="small">
+                                    <span class="text-secondary">Technologies: AI, ML, Python, Web Development, Computer Vision</span>
+                                </div>
+                            </div>
+                            
+                            <div class="project-item">
+                                <div class="item-title">DermAid</div>
+                                <div class="date">📅 Jun 2024 - Jul 2024 | Team Size: 3</div>
+                                <p class="p-small">Developed an AI-powered application to detect skin diseases from images and provide treatment insights.</p>
+                                <div class="small">
+                                    <span class="text-secondary">Technologies: Python, AI, ML, Web Development, Computer Vision</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <div class="col-md-4 p-0">
+                <section class="section">
+                    <h2 class="section-title">EDUCATION</h2>
+                    <div class="education-item">
+                        <div class="item-title">Parul University</div>
+                        <div class="date">📅 2022 - 2026</div>
+                        <div class="small">B.Tech. - CSE (AI) | CGPA: 9.24/10</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="item-title">Shree Vasishtha Vidhyalaya, Surat</div>
+                        <div class="date">📅 2022</div>
+                        <div class="small">12th (CBSE) | 93.60%</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="item-title">Shree Vasishtha Vidhyalaya, Surat</div>
+                        <div class="date">📅 2020</div>
+                        <div class="small">10th (CBSE) | 95.40%</div>
+                    </div>
+                </section>
+                
+                <section class="section">
+                    <h2 class="section-title">TECHNICAL SKILLS</h2>
+                    <div class="skills-container">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Flask</span>
+                        <span class="skill-tag">AI/ML</span>
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">Matplotlib</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">DBMS</span>
+                        <span class="skill-tag">DSA</span>
+                        <span class="skill-tag">Computer Vision</span>
+                        <span class="skill-tag">NLP</span>
+                    </div>
+                </section>
+                
+                <section class="section">
+                    <h2 class="section-title">CERTIFICATIONS</h2>
+                    <div class="course-item">
+                        <div class="item-title">Introduction to Artificial Intelligence</div>
+                        <div class="date">📅 Aug 2024 | Simplilearn</div>
+                    </div>
+                    <div class="course-item">
+                        <div class="item-title">Introduction to SQL</div>
+                        <div class="date">📅 Jun 2023 | Sololearn</div>
+                    </div>
+                    <div class="course-item">
+                        <div class="item-title">C Programming Crash Course</div>
+                        <div class="date">📅 Jan-Mar 2023 | Coding Club</div>
+                    </div>
+                    <div class="course-item">
+                        <div class="item-title">60 Days DSA Bootcamp</div>
+                        <div class="date">📅 Dec 2023-Mar 2024 | Coding Club</div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        
+        <section class="section">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 class="section-title">ACHIEVEMENTS</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="achievement-item">• August LeetCoding Challenge 2024</div>
+                            <div class="achievement-item">• LeetCode 50 Days Challenge 2024</div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="achievement-item">• DMIT Certificate of Excellence (2023, 2024)</div>
+                            <div class="achievement-item">• Member of Coding Club at Parul University</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h2 class="section-title">LANGUAGES & ACTIVITIES</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="achievement-item">• Languages: English, Hindi, Gujarati</div>
+                            <div class="achievement-item">• Regular hackathon participant</div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="achievement-item">• Active in coding competitions</div>
+                            <div class="achievement-item">• Collaborative project contributor</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <a href="#" class="download-btn" onclick="window.print(); return false;">Download PDF</a>
+</body>
+</html>

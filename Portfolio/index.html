@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vidhi Pateliya | Web Developer</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 70px;
+        }
+
+        body {
+            background-color: #f2f5f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1E2761;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 4px;
+            background: linear-gradient(90deg, #1E2761, #408EC6);
+            border-radius: 2px;
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(90deg, #408EC6, #1E2761);
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(30, 39, 97, 0.3);
+            background: linear-gradient(90deg, #1E2761, #408EC6);
+        }
+
+        /* Header and Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(30, 39, 97, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+        }
+
+        header.sticky {
+            padding: 8px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .logo span {
+            color: #408EC6;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links li {
+            margin-left: 40px;
+            position: relative;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            position: relative;
+            padding: 5px 0;
+            color: white;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #408EC6, #7A2048);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .menu-btn {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        /* Hero Section */
+        #hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #1E2761 0%, #408EC6 100%);
+            overflow: hidden;
+            position: relative;
+            color: white;
+        }
+
+        .hero-content {
+            width: 50%;
+            padding-right: 50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-img {
+            width: 50%;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-img img {
+            width: 80%;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-content h1 span {
+            color: #7A2048;
+            display: block;
+            font-weight: 800;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .hero-social {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .hero-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .hero-social a:hover {
+            transform: translateY(-5px);
+            background: #7A2048;
+            color: white;
+        }
+
+        /* Shapes Background */
+        .shape {
+            position: absolute;
+            opacity: 0.1;
+            z-index: 1;
+        }
+
+        .shape-1 {
+            top: 10%;
+            left: 5%;
+            width: 200px;
+            height: 200px;
+            border-radius: 40%;
+            background-color: #7A2048;
+            animation: moveShape 15s linear infinite;
+        }
+
+        .shape-2 {
+            bottom: 20%;
+            right: 10%;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background-color: #408EC6;
+            animation: moveShape 20s linear infinite reverse;
+        }
+
+        .shape-3 {
+            top: 60%;
+            left: 20%;
+            width: 150px;
+            height: 150px;
+            border-radius: 30%;
+            background-color: #1E2761;
+            animation: moveShape 25s linear infinite;
+        }
+
+        @keyframes moveShape {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(50px, 50px) rotate(90deg); }
+            50% { transform: translate(0, 100px) rotate(180deg); }
+            75% { transform: translate(-50px, 50px) rotate(270deg); }
+            100% { transform: translate(0, 0) rotate(360deg); }
+        }
+
+        /* About Section */
+        #about {
+            background-color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .about-img {
+            flex: 1;
+            text-align: center;
+        }
+
+        .about-img img {
+            width: 80%;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border: 5px solid #f2f5f9;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #1E2761;
+        }
+
+        .about-text h3 span {
+            color: #7A2048;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .skills {
+            margin-top: 30px;
+        }
+
+        .skill-item {
+            margin-bottom: 20px;
+        }
+
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            color: #1E2761;
+            font-weight: 600;
+        }
+
+        .skill-bar {
+            height: 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #408EC6, #7A2048);
+            border-radius: 5px;
+            transition: width 1.5s ease-in-out;
+        }
+
+        /* Services Section */
+        #services {
+            background-color: #f2f5f9;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-card {
+            background-color: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+            border-bottom: 5px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: linear-gradient(to bottom, rgba(64, 142, 198, 0.05), transparent);
+            transition: height 0.3s ease;
+            z-index: -1;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border-bottom: 5px solid #408EC6;
+        }
+
+        .service-card:hover::before {
+            height: 100%;
+        }
+
+        .service-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            background: #1E2761;
+            color: white;
+            font-size: 2rem;
+            border-radius: 20px;
+            margin-bottom: 25px;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+            background: #7A2048;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #1E2761;
+        }
+
+        .service-card p {
+            color: #555;
+        }
+
+        /* Projects Section */
+        #projects {
+            background-color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .project-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #f0f0f0;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-img {
+            height: 200px;
+            overflow: hidden;
+            background: linear-gradient(45deg, #1E2761, #408EC6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover .project-img {
+            transform: scale(1.05);
+        }
+
+        .project-img span {
+            font-size: 4rem;
+            color: white;
+        }
+
+        .project-info {
+            padding: 25px;
+        }
+
+        .project-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #1E2761;
+        }
+
+        .project-info p {
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .project-info .btn {
+            padding: 8px 20px;
+            font-size: 0.9rem;
+            background: linear-gradient(90deg, #1E2761, #7A2048);
+        }
+
+        .project-info .btn:hover {
+            background: linear-gradient(90deg, #7A2048, #1E2761);
+        }
+
+        /* Contact Section */
+        #contact {
+            background-color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #1E2761;
+        }
+
+        .contact-info p {
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .contact-details {
+            margin-bottom: 30px;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: #1E2761;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .contact-text h4 {
+            font-size: 1.1rem;
+            color: #1E2761;
+            margin-bottom: 5px;
+        }
+
+        .contact-text p {
+            color: #555;
+            margin: 0;
+        }
+
+        .contact-form {
+            flex: 1;
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid #f0f0f0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #1E2761;
+            font-weight: 600;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border 0.3s, box-shadow 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #408EC6;
+            box-shadow: 0 0 0 3px rgba(64, 142, 198, 0.1);
+        }
+
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            background: linear-gradient(90deg, #1E2761, #408EC6);
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(30, 39, 97, 0.2);
+            background: linear-gradient(90deg, #408EC6, #1E2761);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1E2761;
+            color: #fff;
+            padding: 80px 0 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-section {
+            flex: 1;
+            max-width: 300px;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo span {
+            color: #408EC6;
+        }
+
+        .footer-text {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 20px;
+        }
+
+        .footer-section h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: #7A2048;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            transition: color 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: #408EC6;
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .footer-social a:hover {
+            background: #7A2048;
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Education Section (New) */
+        #education {
+            background-color: #f2f5f9;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Achievement Section (New) */
+        #achievements {
+            background-color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-img, .about-text {
+                flex: none;
+                width: 100%;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: #1E2761;
+                flex-direction: column;
+                padding: 40px 0;
+                transition: left 0.3s;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            #hero {
+                flex-direction: column;
+                text-align: center;
+                height: auto;
+                padding-top: 100px;
+            }
+            
+            .hero-content, .hero-img {
+                width: 100%;
+                padding: 0;
+                margin-bottom: 50px;
+            }
+            
+            .hero-social {
+                justify-content: center;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .footer-section {
+                margin-bottom: 40px;
+            }
+
+            .footer-section h3::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">Vidhi<span>Pateliya</span></a>
+                <div class="menu-btn">☰</div>
+                <ul class="nav-links">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Hi, I'm <span>Vidhi Pateliya</span> Web Developer</h1>
+                <p>I'm a 3rd-year Computer Science Engineering student specializing in Artificial Intelligence with a passion for building innovative web solutions and solving complex problems.</p>
+                <a href="#contact" class="btn">Get In Touch</a>
+                <div class="hero-social">
+                    <a href="https://www.linkedin.com/in/vidhi-pateliya" target="_blank"><span>in</span></a>
+                    <a href="mailto:vi2312pateliya@gmail.com"><span>@</span></a>
+                    <a href="https://github.com/Vidhi-P05" target="_blank"><span>♦</span></a>
+                    <a href="#"><span>☎</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="my_photo.jpeg" alt="About Me"/>
+                </div>
+                <div class="about-text">
+                    <h3>I'm a <span>Web Developer</span> based in Gujarat, India</h3>
+                    <p>I am a 3rd-year Computer Science Engineering student at Parul University, specializing in Artificial Intelligence. With a strong academic background (CGPA: 9.24/10), I combine theoretical knowledge with practical skills in web development, data analysis, and AI/ML concepts.</p>
+                    <p>I'm passionate about leveraging technology to solve complex problems and create innovative solutions. My experience includes building web applications using HTML, CSS, and Flask, as well as utilizing tools like Python, Pandas, and Matplotlib for data analysis and visualization.</p>
+                    <p>I actively engage in solving data structures and algorithms problems to refine my analytical thinking. My long-term aspiration is to contribute to impactful projects in healthcare, technology, and data-driven decision-making.</p>
+                    <div class="skills">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Python</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>HTML & CSS</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Web Development</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Data Structures & Algorithms</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#projects" class="btn">View My Work</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">My Expertise</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">⌘</div>
+                    <h3>Web Development</h3>
+                    <p>I create responsive, user-friendly websites and applications using HTML, CSS, and modern web technologies.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⦿</div>
+                    <h3>Python Programming</h3>
+                    <p>Expert in Python development for various applications, from web apps to data analysis and automation.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">◎</div>
+                    <h3>AI & Machine Learning</h3>
+                    <p>Building intelligent solutions using artificial intelligence and machine learning technologies.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✷</div>
+                    <h3>Problem Solving</h3>
+                    <p>Strong analytical skills with experience in data structures and algorithms for efficient problem-solving.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">◈</div>
+                    <h3>Data Analysis</h3>
+                    <p>Skilled in analyzing and visualizing data to extract meaningful insights and inform decision-making.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⎔</div>
+                    <h3>Database Management</h3>
+                    <p>Experience with database design, SQL, and management systems for efficient data storage and retrieval.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img">
+                        <span>😊</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>Emotion-Based Content Recommendation</h3>
+                        <p>An AI system that analyzes facial expressions to customize social media feeds based on user emotions.</p>
+                        <a href="https://github.com/Vidhi-P05/MoodLens" class="btn" target="_blank">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <span>♟</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>Chequered Conquest: Chess Game</h3>
+                        <p>A dynamic chess application with interactive UI, drag-and-drop functionality, and real-time rule validation.</p>
+                        <a href="https://github.com/Vidhi-P05/Chequered_Conquest" class="btn" target="_blank">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <span>▶️</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>YouTube Video Summarizer</h3>
+                        <p>An AI tool that generates concise summaries of YouTube videos for efficient content consumption.</p>
+                        <a href="https://github.com/Vidhi-P05/Youtube_video_summarizer" class="btn" target="_blank">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <span>🚗</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>Route Differentiation using GNSS</h3>
+                        <p>An AI/ML algorithm that distinguishes vehicle movements between highways and service roads.</p>
+                        <a href="https://github.com/Vidhi-P05/Route_Differentiation_with_GNSS" class="btn" target="_blank">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <span>💊</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>DermAid</h3>
+                        <p>An AI-powered application for skin disease detection and providing comprehensive treatment insights.</p>
+                        <a href="https://github.com/Vidhi-P05/DermAid" class="btn" target="_blank">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Let's Connect</h3>
+                    <p>Feel free to reach out to me for collaboration, job opportunities, or just to say hello!</p>
+                    <div class="contact-details">
+                        <div class="contact-detail">
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <p>vi2312pateliya@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <div class="contact-icon">📱</div>
+                            <div class="contact-text">
+                                <h4>Phone</h4>
+                                <p>+91 756-792-4923</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <div class="contact-icon">📍</div>
+                            <div class="contact-text">
+                                <h4>Location</h4>
+                                <p>Gujarat, India</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">Vidhi<span>Pateliya</span></div>
+                    <p class="footer-text">Web Developer with a passion for creating innovative solutions and solving complex problems.</p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/in/vidhi-pateliya" target="_blank"><span>in</span></a>
+                        <a href="mailto:vi2312pateliya@gmail.com"><span>@</span></a>
+                        <a href="https://github.com/Vidhi-P05" target="_blank"><span>♦</span></a>
+                        <a href="#"><span>☎</span></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>Gujarat, India</p>
+                    <p>vi2312pateliya@gmail.com</p>
+                    <p>+91 75679 24923</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Vidhi Pateliya. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Sticky Header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+
+        // Mobile Menu Toggle
+        const menuBtn = document.querySelector('.menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        menuBtn.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when link is clicked
+        const navLinksItems = document.querySelectorAll('.nav-links a');
+        navLinksItems.forEach(item => {
+            item.addEventListener('click', function() {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Skill bars animation
+        window.addEventListener('load', function() {
+            const skillBars = document.querySelectorAll('.skill-progress');
+            skillBars.forEach(skill => {
+                const width = skill.style.width;
+                skill.style.width = '0';
+                setTimeout(() => {
+                    skill.style.width = width;
+                }, 300);
+            });
+        });
+
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const name = document.getElementById('name').value;
+                alert(`Thank you ${name} for your message! I'll get back to you soon.`);
+                contactForm.reset();
+            });
+        }
+    </script>
+</body>
+</html>
