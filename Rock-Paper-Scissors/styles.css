@@ -80,6 +80,7 @@ body{
     align-items: center;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 20px;
     padding: 20px 40px;
     margin-bottom: 40px;
@@ -128,6 +129,7 @@ body{
 .game-area {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 30px;
     padding: 40px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
@@ -227,6 +229,7 @@ body{
     border-radius: 15px;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     transition: all 0.3s ease;
 }
@@ -291,6 +294,7 @@ body{
     gap: 10px;
     min-width: 120px;
     backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     position: relative;
     overflow: hidden;
 }
@@ -358,6 +362,7 @@ body{
     align-items: center;
     gap: 8px;
     backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
 .action-btn:hover {
@@ -375,6 +380,7 @@ body{
     padding: 20px;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 15px;
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
