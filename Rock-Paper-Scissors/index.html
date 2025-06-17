@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors - Ultimate Edition</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background-animation"></div>
+
+    <div class="container">
+        <header class="game-header">
+            <h1 class="game-title">
+                <span class="title-word">ROCK</span>
+                <span class="title-word">PAPER</span>
+                <span class="title-word">SCISSORS</span>
+            </h1>
+            <div class="subtitle">Choose your weapon wisely</div>
+        </header>
+
+        <div class="scoreboard">
+            <div class="score-item player-score">
+                <div class="score-label">YOU</div>
+                <div class="score-value" id="playerScore">0</div>
+            </div>
+            <div class="score-divider">VS</div>
+            <div class="score-item computer-score">
+                <div class="score-label">CPU</div>
+                <div class="score-value" id="computerScore">0</div>
+            </div>
+        </div>
+
+        <div class="game-area">
+            <div class="choice-display">
+                <div class="player-choice">
+                    <div class="choice-container" id="playerChoice">
+                        <div class="choice-placeholder">?</div>
+                    </div>
+                    <div class="choice-label">Your Choice</div>
+                </div>
+                
+                <div class="battle-indicator" id="battleIndicator">
+                    <div class="vs-text">VS</div>
+                </div>
+                
+                <div class="computer-choice">
+                    <div class="choice-container" id="computerChoice">
+                        <div class="choice-placeholder">?</div>
+                    </div>
+                    <div class="choice-label">CPU Choice</div>
+                </div>
+            </div>
+
+            <div class="result-display" id="resultDisplay">
+                <div class="result-text" id="resultText">Make your move!</div>
+            </div>
+
+            <div class="game-controls">
+                <button class="choice-btn" data-choice="rock">
+                    <span class="choice-icon">🪨</span>
+                    <span class="choice-name">ROCK</span>
+                </button>
+                <button class="choice-btn" data-choice="paper">
+                    <span class="choice-icon">📄</span>
+                    <span class="choice-name">PAPER</span>
+                </button>
+                <button class="choice-btn" data-choice="scissors">
+                    <span class="choice-icon">✂️</span>
+                    <span class="choice-name">SCISSORS</span>
+                </button>
+            </div>
+
+            <div class="game-actions">
+                <button class="action-btn reset-btn" id="resetBtn">
+                    <span>🔄</span>
+                    Reset Game
+                </button>
+            </div>
+        </div>
+
+        <div class="game-stats" id="gameStats">
+            <div class="stat-item">
+                <span class="stat-label">Games Played:</span>
+                <span class="stat-value" id="gamesPlayed">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Win Rate:</span>
+                <span class="stat-value" id="winRate">0%</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
