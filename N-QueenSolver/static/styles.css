@@ -102,6 +102,7 @@ button:hover {
     border-radius: 14px;
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
     transition: transform 0.2s ease;
+    grid-template-columns: repeat(var(--grid-columns), 1fr);
 }
 
 .grid:hover {

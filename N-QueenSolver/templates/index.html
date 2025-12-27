@@ -21,7 +21,7 @@
             <p>Total Solutions: {{ total }}</p>
             <div class="solutions">
                 {% for solution in solutions %}
-                    <div class="grid" style="grid-template-columns: repeat({{ n }}, 1fr);">
+                    <div class="grid" style="--grid-columns: {{ solution|length }};">
                         {% for row in solution %}
                             <div class="row">
                                 {% for cell in row %}
