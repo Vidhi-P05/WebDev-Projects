@@ -55,6 +55,13 @@ An clone of Google Home Page.
 
 📁 Folder: `Google Home Page/`
 
+### 7. 👑 N-Queen Solver
+A program that finds all possible solutions to the N-Queens problem for a given board size.
+- Uses backtracking to place N queens on an N×N chessboard.
+- Displays all valid board configurations where no two queens threaten each other.
+- Helps understand recursion and constraint-solving algorithms.
+- 
+📁 Folder: N-QueenSolver/
 
 
 ## 🛠️ Technologies Used
