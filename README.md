@@ -49,7 +49,7 @@ An interactive **Tic-Tac-Toe** game built using basic web technologies.
 
 📁 Folder: `tic-tac-toe/`
 
-### 5. ❌⭕ Tic-Tac-Toe Game
+### 6. 🔍 Google Home Page
 An clone of Google Home Page.  
 - Simple project to learn CSS elements.
 
